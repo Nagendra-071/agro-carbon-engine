@@ -1,4 +1,4 @@
-Markdown# EPICS Carbon Platform: Agro-Carbon Engine
+# EPICS Carbon Platform: Agro-Carbon Engine
 
 > An integrated machine learning and biophysical platform designed to optimize crop selection for farmers based on soil parameters while calculating potential carbon sequestration yields and carbon credit revenue.
 
