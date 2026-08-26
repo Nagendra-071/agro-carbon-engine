@@ -51,35 +51,41 @@ Model A uses a **Random Forest Classifier** trained on multi-variable agricultur
 * **Climate Conditions:** Temperature (°C), Relative Humidity (%), Rainfall (mm)
 * **Soil Chemistry:** pH level
 
-### Performance Metrics
-* **Accuracy:** **99.55%** on unseen test data
-* **Artifact Export:** Saved to `exported_models/survival_model.pkl` for API integration
+### Performance Metrics & Threshold Logic
+* **Accuracy**: 99.55% on unseen test data
 
----
+* **Dataset Scope**: Multi-class classification expanded from 22 agricultural crops to 27 species (includes 5 agro-forestry tree species: Bamboo, Teak, Eucalyptus, Subabul, and Poplar)
 
+* **Confidence Filtering**: Evaluates species probabilities using predict_proba() combined with a > 0.05 (5%) threshold to filter low-probability noise
 
-##📂 Project StructurePlaintext
-
-epics-carbon-platform/
-│
-├── data/
-│   └── raw/
-│       └── Crop_recommendation.csv
-│
-├── exported_models/
-│   └── survival_model.pkl      # Saved Model A binary
-│
-├── notebooks/
-│   └── Model_A_Exploration.ipynb
-│
-├── src/
-│   └── survival_Classifier.py  # Model A training & export script
-│
-├── requirements.txt
-└── README.md
+* **Artifact Export**: Saved to exported_models/survival_model.pkl using dynamic relative path resolution for API integration
 
 
-##🚀 Getting Started
+## 📂 Project StructurePlaintext
+   
+   epics-carbon-platform/
+   │
+   ├── data/
+   │   └── raw/
+   │       ├── Crop_recommendation.csv           # Original 22-class dataset
+   │       └── updated_crop_recommendation.csv   # Expanded 27-class dataset (Crops + Trees)
+   │
+   ├── exported_models/
+   │   └── survival_model.pkl                    # Saved Model A binary
+   │
+   ├── notebooks/
+   │   └── Model_A_Exploration.ipynb
+   │
+   ├── src/
+   │   ├── create_dataset.py                     # Agro-forestry dataset expansion script
+   │   └── survival_Classifier.py               # Model A training & export script
+   │
+   ├── requirements.txt
+   └── README.md
+   
+
+## 🚀 Getting Started
+
 ### 1. Environment Setup
 ```bash
 python -m venv venv
@@ -91,7 +97,7 @@ pip install -r requirements.txt
 python src/survival_Classifier.py
 
 
-##👨‍💻 Authors & EPICS Project
-Developed as part of the EPICS Carbon Platform project to empower sustainable agriculture and carbon credit monetization for farmers.
+## 👨‍💻 Authors & EPICS Project
+Developed as part of the EPICS Carbon Platform project to empower sustainable agriculture and optimized crop recommendations for farmers.
 ---
 
