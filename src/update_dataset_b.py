@@ -13,7 +13,7 @@ DATA_DIR = os.path.join(BASE_DIR, "data")
 RAW_DATA_DIR = os.path.join(DATA_DIR, "raw")
 
 # Input from data/raw/
-INPUT_CSV = os.path.join(RAW_DATA_DIR, "Crop_recommendation.csv")
+INPUT_CSV = os.path.join(RAW_DATA_DIR, "updated_crop_recommendation.csv")
 if not os.path.exists(INPUT_CSV):
     INPUT_CSV = os.path.join(RAW_DATA_DIR, "crop_recommendation.csv")
 
